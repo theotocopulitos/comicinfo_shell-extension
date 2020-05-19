@@ -1,0 +1,12 @@
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\CountLinesExtension.dll
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\CountLinesExtension.pdb
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\Apex.WinForms.dll
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\ServerManager.exe
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\SharpShell.dll
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\srm.exe
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\ServerManager.pdb
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\SharpShell.pdb
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\bin\Release\SharpShell.xml
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\obj\Release\GetComicInfo.csprojResolveAssemblyReference.cache
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\obj\Release\CountLinesExtension.dll
+C:\Users\apm\Documents\Visual Studio 2013\Projects\GetComicInfo\GetComicInfo\obj\Release\CountLinesExtension.pdb

@@ -1,0 +1,12 @@
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\obj\Debug\CountLinesExtension.csprojResolveAssemblyReference.cache
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\CountLinesExtension.dll
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\CountLinesExtension.pdb
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\Apex.WinForms.dll
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\ServerManager.exe
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\SharpShell.dll
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\srm.exe
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\ServerManager.pdb
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\SharpShell.pdb
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\bin\Debug\SharpShell.xml
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\obj\Debug\CountLinesExtension.dll
+c:\users\apm\documents\visual studio 2013\Projects\CountLinesExtension\CountLinesExtension\obj\Debug\CountLinesExtension.pdb
