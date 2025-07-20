@@ -1,5 +1,7 @@
 ﻿using SharpShell.Attributes;
 using SharpShell.SharpContextMenu;
+using System;
+using System.IO;
 using System.IO.Compression;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -69,46 +71,65 @@ public class GetComicInfoExtension : SharpContextMenu
         //  Go through each file.
         foreach (var filePath in SelectedItemPaths)
         {
-            // loads the zip file
-            ZipArchive archivo = ZipFile.OpenRead(filePath);
+            try
+            {
+                // loads the zip file
+                using (ZipArchive archivo = ZipFile.OpenRead(filePath))
+                {
+                    // gets the comicinfo.xml file - add error handling
+                    ZipArchiveEntry entry = archivo.GetEntry("ComicInfo.xml");
+                    
+                    if (entry != null) 
+                    {
+                        // opens the comicinfo.xml file              
+                        XmlDocument xmlDoc = new XmlDocument();
+                        using (var stream = entry.Open())
+                        {
+                            xmlDoc.Load(stream);
+                        }
+                            
+                        // Helper function to safely get XML element text
+                        string GetElementText(string tagName)
+                        {
+                            var nodes = xmlDoc.GetElementsByTagName(tagName);
+                            return nodes.Count > 0 ? nodes[0].InnerText : "N/A";
+                        }
 
-            // gets the comicinfo.xml file - add error handling
-            ZipArchiveEntry entry = archivo.GetEntry("ComicInfo.xml");
-            
-            if (entry != null) {
-            // opens the comicinfo.xml file              
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(entry.Open());
-                
-            XmlNodeList SeriesList = xmlDoc.GetElementsByTagName("Series");
-            XmlNodeList VolumeList = xmlDoc.GetElementsByTagName("Volume");
-            XmlNodeList IssueList = xmlDoc.GetElementsByTagName("Number");
-            XmlNodeList TitleList = xmlDoc.GetElementsByTagName("Title");
-            //XmlNodeList DayList = xmlDoc.GetElementsByTagName("Day");
-            XmlNodeList MonthList = xmlDoc.GetElementsByTagName("Month");
-            XmlNodeList YearList = xmlDoc.GetElementsByTagName("Year");
-            XmlNodeList WriterList = xmlDoc.GetElementsByTagName("Writer");
-            XmlNodeList PencillerList = xmlDoc.GetElementsByTagName("Penciller");
-            XmlNodeList SummaryList = xmlDoc.GetElementsByTagName("Summary");
+                        string series = GetElementText("Series");
+                        string volume = GetElementText("Volume");
+                        string issue = GetElementText("Number");
+                        string title = GetElementText("Title");
+                        string month = GetElementText("Month");
+                        string year = GetElementText("Year");
+                        string writer = GetElementText("Writer");
+                        string penciller = GetElementText("Penciller");
+                        string summary = GetElementText("Summary");
 
-
-            // info
-            builder.AppendLine(string.Format("{0} ({1}) #{2} ({3}-{4})\n\n\"{5}\"\n\n\n{6} | {7}\n\n\nSummary:\n\n {8}",
-                        SeriesList[0].InnerXml, 
-                        VolumeList[0].InnerXml,
-                        IssueList[0].InnerXml,
-                        YearList[0].InnerXml,
-                        MonthList[0].InnerXml,
-                        //DayList[0].InnerXml,
-                        TitleList[0].InnerXml,
-                        WriterList[0].InnerXml,
-                        PencillerList[0].InnerXml,
-                        SummaryList[0].InnerXml));
-                        
-           //  Show the ouput.                   
-                    MessageBox.Show(builder.ToString());
+                        // info
+                        builder.AppendLine(string.Format("{0} ({1}) #{2} ({3}-{4})\n\n\"{5}\"\n\n\n{6} | {7}\n\n\nSummary:\n\n {8}",
+                                    series, 
+                                    volume,
+                                    issue,
+                                    year,
+                                    month,
+                                    title,
+                                    writer,
+                                    penciller,
+                                    summary));
+                                    
+                        //  Show the output.                   
+                        MessageBox.Show(builder.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ComicInfo.xml found in " + Path.GetFileName(filePath));
+                    }
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reading comic file: " + ex.Message);
+            }
         }
     }
 }
