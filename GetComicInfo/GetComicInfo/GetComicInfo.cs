@@ -122,7 +122,7 @@ public class GetComicInfoExtension : SharpContextMenu
                     }
                     else
                     {
-                        MessageBox.Show("No ComicInfo.xml found in " + Path.GetFileName(filePath));
+                        MessageBox.Show($"No ComicInfo.xml found in {Path.GetFileName(filePath)}");
                     }
                 }
             }
